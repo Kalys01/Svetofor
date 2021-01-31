@@ -11,8 +11,8 @@
 <body>
     <div class="container" id="app">
         <div class="svetofor">
-            <div class="light time go"><span class="countdown">{{ timer }}</span></div>
-            <div class="light stop"></div>
+            <div class="light time" v-bind:class="active"><span class="countdown">{{ timer }}</span></div>
+            <div class="light" v-bind:class="active"></div>
         </div>
     </div>
 </body>
