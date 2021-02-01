@@ -8,14 +8,14 @@ const App = {
     methods: {
         timers: function() {
             setInterval(() => {
-                if (this.timer < 7){
-                    this.active = this.timer % 2 ? 'prepare' : null  
-                }
-                if (this.timer < 1){
-                    this.timer = 11;
-                    this.active = this.active == 'stop' ? 'go' : 'stop';
-                }
                 this.timer--;
+                if (this.timer < 6){
+                    this.active = this.timer % 2 ? null : 'prepare' 
+                }
+                if (this.timer < 0){
+                    this.timer = 10;
+                    this.active = 'go' ? 'stop' : 'go';
+                }
                 
             }, 1000);
         },
