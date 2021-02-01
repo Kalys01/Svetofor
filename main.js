@@ -6,20 +6,17 @@ const App = {
         }
     },
     methods: {
-        timers () {
+        timers: function() {
             setInterval(() => {
-                if (this.timer <= 5){
-                    this.active = this.timer % 2 ? 'prepare' : null 
-    
-                    if (this.timer == 0){
-                        // setTimeout(() => {
-                        //     this.active = 'prepare'
-                        // }, 3000)
-                        this.timer = 11;
-                        this.active = this.active == 'stop' ? 'go' : 'stop';
-                    }
+                if (this.timer < 7){
+                    this.active = this.timer % 2 ? 'prepare' : null  
+                }
+                if (this.timer < 1){
+                    this.timer = 11;
+                    this.active = this.active == 'stop' ? 'go' : 'stop';
                 }
                 this.timer--;
+                
             }, 1000);
         },
     },
